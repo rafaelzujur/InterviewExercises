@@ -35,16 +35,22 @@ public class PrimeNumberPairs {
 	 */
 	private static void printPrimeNumberPairs(int N)
 	{
-		// Get the prime numbers up to half of the given number since any number bigger than the half multiplied
-		// by the smallest prime number will yield a number greater than the given number
-		boolean[] prime_arr = getPrimeNumbers(N/2+1);
+		// Get the prime numbers
+		boolean[] prime_arr = getPrimeNumbers(N);
 		
 		// Create a variable that will construct all the pair of prime numbers
 		StringBuffer primeNumberPairs = new StringBuffer();
 		
+		// Calculate half of N
+		int halfN = N/2;
+		
 		// Iterates over the arrays of boolean that represent the prime numbers
 		for (int p = 2; p < prime_arr.length; p++)
 		{
+			// break the iteration when p is greater than half of the value
+			if (p > halfN)
+				break;
+			
 			if (prime_arr[p])
 			{
 				for (int q = 2; q < prime_arr.length; q++ )
@@ -73,8 +79,12 @@ public class PrimeNumberPairs {
 		// Set all the values to true
 		Arrays.fill(prime_arr, true);
 		
+		// Calculates the square root of the size of the array.
+		// This value will represent the limit for the iteration
+		int sqrRoot = (int) Math.sqrt(MAX);
+		
 		// Iterate over the array to set the numbers that are NOT prime
-		for (int i = 2; i < prime_arr.length; i++)
+		for (int i = 2; i < sqrRoot; i++)
 		{
 			// Check if it is a prime number
 			if (prime_arr[i])
