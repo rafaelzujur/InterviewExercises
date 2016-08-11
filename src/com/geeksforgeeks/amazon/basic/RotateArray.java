@@ -5,7 +5,9 @@ import java.util.Scanner;
 /*
 	Given an array of size n, rotate it by d elements. 
 	
-	Input: The first line of the input contains T denoting the number of testcases. First line of test case is the number of elements 'n' and elements 'd' to be rotated. Second line of test case will be the array elements.
+	Input: The first line of the input contains T denoting the number of testcases. 
+	First line of test case is the number of elements 'n' and elements 'd' to be rotated. 
+	Second line of test case will be the array elements.
 	Output: Rotated array is displayed to the user.
 	
 	
